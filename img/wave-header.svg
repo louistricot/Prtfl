@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1920px" height="376px" viewBox="0 0 1920 376" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>Path Copy 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M0,234.189777 C309.376239,111.776146 629.376239,111.776146 960,234.189777 C1290.62376,356.603408 1610.62376,356.603408 1920,234.189777 L1920,-111 L0,-111 L0,234.189777 Z" id="path-1"></path>
+        <filter x="-2.5%" y="-5.7%" width="105.0%" height="122.9%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="27" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="11.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.186056386 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Apple-TV-Copy-15">
+            <g id="Path-Copy-2">
+                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                <use fill="#030C19" fill-rule="evenodd" xlink:href="#path-1"></use>
+            </g>
+        </g>
+    </g>
+</svg>

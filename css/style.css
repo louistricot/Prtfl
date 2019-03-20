@@ -1,0 +1,857 @@
+/* -------------------------------------------------------------- */
+/* ------------------------- Indispensables -------------------- */
+/* -------------------------------------------------------------- */
+@charset"UTF-8";
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* clearfix */
+.clearfix::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+:root {
+	font-size: 62.5%;
+}
+
+h1, h2, h3 {
+	font-family: "Poppins-titre", sans-serif;
+	text-transform: uppercase;
+}
+
+h2 {
+	font-size: 4rem;
+}
+
+p {
+	line-height: 3.1rem;
+	font-size: 2.4rem;
+	margin: 50px 0;
+}
+
+body {
+	margin: 0;
+	width: 100vw;
+	height: 100vh;
+	overflow-x: hidden;
+	font-family: "Neutra-light", sans-serif;
+	font-size: 1.6rem;
+	color: #030C19;
+}
+
+.wrapper {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+	color: #030C19;
+}
+
+/* Fonts */
+@font-face {
+	font-family: "Poppins-titre";
+	src: url("../fonts/poppins-extrabold.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "Neutra-light";
+	src: url("../fonts/neutra-light.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "Neutra-bold";
+	src: url("../fonts/neutra-bold.ttf") format("truetype");
+}
+
+/* -------------------------------------------------------------- */
+/* ------------------------- Général -------------------- */
+/* -------------------------------------------------------------- */
+span.texte_rouge {
+	color: #FF5858;
+}
+
+.arrow {
+	position: absolute;
+	color: #fff;
+	font-weight: bold;
+	z-index: 1;
+	cursor: pointer;
+}
+
+.btn {
+	width: 100%;
+	bottom: 30px;
+	display: flex;
+	justify-content: center;
+}
+
+/**/
+/* -------------------------------------------------------------- */
+/* ------------------------- Header -------------------- */
+/* -------------------------------------------------------------- */
+/* ------------------------- Section 1 - Je m'appelle Louis -------------------- */
+section#container_louis {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #030C19;
+	color: #fff;
+}
+
+.container_louis {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.container_louis h1 {
+	overflow: hidden;
+	/* Ensures the content is not revealed until the animation */
+	margin: 0 auto;
+	/* Gives that scrolling effect as the typing happens */
+	white-space: nowrap;
+	/* Keeps the content on a single line */
+	letter-spacing: .15em;
+	/* Adjust as needed */
+	animation-name: typing;
+	animation-fill-mode: forwards;
+	width: 0;
+}
+
+.first h1 {
+	animation-duration: 3s;
+	animation-timing-function: steps(19, end);
+	/* 19 steps car 19 caractères (espaces compris) */
+}
+
+.second h1 {
+	animation-delay: 3s;
+	animation-duration: calc(3s * 6/19);
+	/* l'animation doit durer (3s * 6/19) pour être rythmée comme celle du dessus */
+	animation-timing-function: steps(6, end);
+	/* 6 steps car 6 caractères (espaces compris) */
+}
+
+/* The typing effect */
+@keyframes typing {
+	from {
+		width: 0
+	}
+
+	to {
+		width: 100%
+	}
+}
+
+/* ------------------------- Navigation principale -------------------- */
+header section#navbar {
+	height: 300px;
+	background-image: url('../img/wave-header.svg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding: 50px 0;
+	/* background-position: -100px; */
+}
+
+header section#navbar div#container_nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+header section#navbar div#container_nav div#logo_louis img {
+	height: 50px;
+	display: block;
+}
+
+header section#navbar div#container_nav nav ul {
+	display: flex;
+	justify-content: space-between;
+	width: 900px;
+}
+
+header section#navbar div#container_nav nav ul li {
+	position: relative;
+}
+
+header section#navbar div#container_nav nav ul li a span {
+	width: 0px;
+	height: 2px;
+	display: block;
+	background: #FF5858;
+	position: absolute;
+	transition: width 0.3s;
+}
+
+header section#navbar div#container_nav nav ul li a:hover span,
+header section#navbar div#container_nav nav ul li a:active span,
+header section#navbar div#container_nav nav ul li a:visited span {
+	width: 20px;
+}
+
+header section#navbar div#container_nav nav ul li a {
+	display: block;
+	text-decoration: none;
+	color: #fff;
+}
+
+header section#navbar div#container_nav nav ul li a:hover,
+header section#navbar div#container_nav nav ul li a:active header section#navbar div#container_nav nav ul li a:visited,
+header section#navbar div#container_nav nav ul li a:focus {
+	color: #FF5858;
+}
+
+/* -------------------------------------------------------------- */
+/* ------------------------- Main -------------------- */
+/* -------------------------------------------------------------- */
+/* ------------------------- Page présentation -------------------- */
+section#presentation div#p-right {
+	padding-left: 400px;
+}
+
+section#presentation div#p-left {
+	padding-right: 400px;
+}
+
+section#presentation div p {
+	/* font-size: 1.6rem; */
+	line-height: 3.1rem;
+}
+
+/* ------------------------- Page CV -------------------- */
+section#formations,
+section#competences,
+section#exp {
+	position: relative;
+}
+
+section#formations h2,
+section#competences h2,
+section#exp h2 {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 10rem;
+	margin: 0;
+	font-size: 11rem;
+	letter-spacing: 2.1rem;
+	/* opacity: 0.5; */
+	z-index: -1;
+	text-shadow: 5px 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Contact */
+section#contact>div {
+	display: flex;
+}
+
+section#contact div.container_visuel {
+	text-align: center;
+}
+
+section#contact div.container_visuel img {
+	width: 300px;
+}
+
+section#contact div.desc_contact div.picto {
+	display: flex;
+	align-items: center;
+	padding: 10px 0;
+	margin-left: 60px;
+}
+
+section#contact div.desc_contact>div {
+	font-size: 2.4rem;
+}
+
+section#contact div.desc_contact div.picto span {
+	background-repeat: no-repeat;
+	background-size: contain;
+	height: 30px;
+	width: 30px;
+	display: block;
+	margin-right: 20px;
+}
+
+section#contact div.desc_contact div.picto span.tel {
+	background-image: url('../img/picto/tel.svg');
+}
+
+section#contact div.desc_contact div.picto span.contact_mail {
+	background-image: url('../img/picto/mail-rouge.svg');
+}
+
+/* Formations */
+section#formations div#container_form {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/* text-align: center; */
+	margin-top: 150px;
+	;
+}
+
+section#formations div#container_form div.liste_dates {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex: 1;
+	font-family: "Neutra-bold";
+}
+
+section#formations div#container_form div.liste_dates div p {
+	margin: 200px 0;
+	font-size: 4rem;
+}
+
+section#formations div#container_form div.liste_dates div.content-right p:first-child {
+	margin-top: 0;
+}
+
+section#formations div#container_form div.liste_dates div.content-right p:last-child {
+	margin-bottom: 0;
+}
+
+section#formations div#container_form div.liste_dates div.content-left {
+	padding-right: 50px;
+	border-right: 0.5px solid #030C19;
+}
+
+section#formations div#container_form div.liste_dates div.content-right {
+	padding-left: 50px;
+	/* border-left: 0.5px solid #030C19; */
+}
+
+section#formations div#container_form div.titre_form {
+	flex: 2;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+
+section#formations div#container_form div.titre_form p {
+	margin: 0;
+	padding: 40px 0;
+}
+
+/* Compétences */
+section#competences h2 {
+	text-align: right;
+}
+
+/* section#competences div#container_competences {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/* text-align: center;
+	margin-top: 150px;
+}
+
+section#competences div#container_compe>div {
+	flex: 1;
+} */
+section#competences div.container_competences {
+	margin-top: 150px;
+}
+
+section#competences div.container_competences>div {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	padding: 50px 0;
+}
+
+section#competences div.c-1 {
+	position: relative;
+}
+
+section#competences div.c-1 img {
+	height: 60px;
+}
+
+section#competences div.c-1 img:nth-child(2) {
+	position: absolute;
+	left: 2px;
+	top: -2px;
+	/* transform: translateX(0);
+	transform: translateY(0); */
+	transform: translate3d(0);
+}
+
+section#competences div.c-1:hover img:nth-child(2) {
+	/* transform: translateX(4px);
+	transform: translateY(-4px); */
+	transform: translate3d(2px, -2px, 0);
+}
+
+/* Expériences */
+section#exp div#container_exp {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/* text-align: center; */
+	margin-top: 150px;
+}
+
+section#exp div#container_exp div.liste_dates {
+	display: flex;
+	justify-content: center;
+	/* align-items: center; */
+	flex: 1;
+	font-family: "Neutra-bold";
+}
+
+section#exp div#container_exp div.liste_dates div p {
+	margin: 200px 0;
+	font-size: 4rem;
+}
+
+section#exp div#container_exp div.liste_dates div.content-right p {
+	/* margin: 400px 0; */
+}
+
+section#exp div#container_exp div.liste_dates div.content-right p:first-child {
+	margin-top: 0;
+}
+
+section#exp div#container_exp div.liste_dates div p:last-child {
+	/* padding-top: 150px; */
+}
+
+section#exp div#container_exp div.liste_dates div.content-right p:last-child {
+	margin-top: 430px;
+}
+
+section#exp div#container_exp div.liste_dates div.content-left p {
+	margin: 250px 0;
+}
+
+section#exp div#container_exp div.liste_dates div.content-left p:last-child {
+	margin-top: 430px;
+}
+
+section#exp div#container_exp div.liste_dates div.content-left {
+	padding-right: 50px;
+	/* border-right: 0.5px solid #030C19; */
+}
+
+section#exp div#container_exp div.liste_dates div.content-right {
+	padding-left: 50px;
+	border-left: 0.5px solid #030C19;
+}
+
+section#exp div#container_exp div.titre_form {
+	flex: 2;
+	display: flex;
+	justify-content: end;
+	flex-direction: column;
+	height: 992px;
+}
+
+section#exp div#container_exp div.titre_form p {
+	margin: 0;
+	padding: 0;
+}
+
+section#exp div#container_exp div.titre_form>div {
+	padding-bottom: 70px;
+}
+
+section#exp div#container_exp div.titre_form>div p:nth-child(1) {
+	padding-bottom: 10px;
+}
+
+section#exp div#container_exp div.titre_form>div p:nth-child(2) {
+	font-family: "Neutra-bold";
+	padding-bottom: 10px;
+}
+
+section#exp div#container_exp div.titre_form>div p:nth-child(3) {
+	font-size: 2rem;
+}
+
+section#exp div#container_exp div.titre_form div:last-child {
+	padding-top: 50px;
+}
+
+/* ------------------------- Page webdesign -------------------- */
+section.webd {
+	background-repeat: no-repeat;
+	background-size: contain;
+	height: 700px;
+}
+
+section.webd>div {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	/* align-items: center; */
+	justify-content: space-evenly;
+}
+
+section#projet_1 {
+	background-image: url('../img/p1/apercu_p1.png');
+}
+
+section#projet_2 {
+	background-image: url('../img/p2/apercu_p2.png');
+	background-position: right;
+}
+
+section#projet_3 {
+	background-image: url('../img/p3/apercu_p3.png');
+}
+
+section#projet_4 {
+	background-image: url('../img/p4/apercu_p4.png');
+	background-position: right;
+}
+
+section.webd p {
+	width: 900px;
+}
+
+section.left>div {
+	padding-left: 300px;
+}
+
+section.left>div p {
+	padding-left: 240px;
+}
+
+section.left div.cta_projets {
+	padding-left: 480px;
+}
+
+section.right>div p {
+	padding-left: 240px;
+}
+
+/*
+section.webd div.cta_projets a {
+	border: 2px solid #FF5858;
+	border-radius: 50px;
+	padding: 10px 30px;
+	display: inline-block;
+} */
+.cta {
+	position: relative;
+	margin: auto;
+	padding: 21px 22px;
+	transition: all 0.2s ease;
+}
+
+.cta:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	border-radius: 28px;
+	background: rgba(255, 171, 157, 0.5);
+	width: 56px;
+	height: 56px;
+	transition: all 0.3s ease;
+}
+
+.cta span {
+	position: relative;
+	font-size: 16px;
+	line-height: 18px;
+	font-weight: 900;
+	letter-spacing: 0.25em;
+	text-transform: uppercase;
+	vertical-align: middle;
+}
+
+.cta svg {
+	position: relative;
+	top: 0;
+	margin-left: 10px;
+	fill: none;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	stroke: #111;
+	stroke-width: 2;
+	transform: translateX(-5px);
+	transition: all 0.3s ease;
+}
+
+.cta:hover:before {
+	width: 100%;
+	background: #FF5858;
+}
+
+.cta:hover svg {
+	transform: translateX(0);
+}
+
+.cta:active {
+	transform: scale(0.96);
+}
+
+/* Détails des projets */
+section.bg_projets {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: top;
+	height: 600px;
+	width: 100vw;
+	position: absolute;
+	top: 0px;
+	z-index: -1;
+}
+
+section.detail_projets {
+	margin-top: 200px;
+	padding-bottom: 100px;
+}
+
+/* Projet 1 JO */
+section#bg_p1 {
+	background-image: url(../img/p1/entete_p1.svg);
+}
+
+section#detail_p1 div.container_desc-p1 {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+section#detail_p1 div.container_desc-p1 img {
+	height: 300px;
+	width: auto;
+}
+
+section#detail_p1 div.maquettes-p1 {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+section#detail_p1 div.maquettes-p1 img {
+	height: 500px;
+	flex: 1;
+}
+
+section#detail_p1 div.maquettes-p1 p {
+	flex: 2;
+}
+
+section#detail_p1 div.perspective_vue {
+	display: flex;
+	flex-direction: column;
+	transform: rotateZ(-40deg);
+	justify-content: center;
+	flex-direction: row-reverse;
+	transform: rotateZ;
+	align-items: center;
+	position: relative;
+	z-index: -1;
+}
+
+section#detail_p1 div.perspective_vue>div {
+	display: flex;
+	flex-direction: column;
+	margin: 0 15px;
+}
+
+section#detail_p1 div.perspective_vue img {
+	width: 250px;
+	padding: 15px 0;
+	filter: drop-shadow(-15px -10px 30px rgba(0, 0, 0, 0.1));
+}
+
+/* test zoom sur maquettes projets */
+section#detail_p1 div.test {
+	position: relative;
+}
+
+section#detail_p1 div.test img {
+	position: absolute;
+}
+
+/* Projet 2 Café corsé*/
+section#bg_p2 {
+	background-image: url(../img/p2/entete_p2.svg);
+}
+
+section#detail_p2 div.container_desc-p2 {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin: 60px 0;
+}
+
+section#detail_p2 div.maquettes-p2 {
+	text-align: center;
+	padding: 50px 0;
+}
+
+section#detail_p2 div.maquettes-p2 img {
+	width: 700px;
+}
+
+/* Projet 3 Wish One */
+section#bg_p3 {
+	background-image: url(../img/p3/entete_p3.png);
+}
+
+section#detail_p3 {
+	padding-bottom: 0;
+}
+
+section#detail_p3 div.container_desc-p3 {
+	text-align: center;
+	margin: 60px 0;
+}
+
+section#detail_p3 div.container_desc-p3 img {
+	width: 500px;
+}
+
+section#detail_p3 div.perspective_vue {
+	display: flex;
+	flex-direction: column;
+	transform: rotateZ(-40deg);
+	justify-content: center;
+	flex-direction: row-reverse;
+	transform: rotateZ;
+	align-items: center;
+	position: relative;
+	top: -500px;
+}
+
+section#detail_p3 div.perspective_vue>div {
+	display: flex;
+	flex-direction: column;
+	margin: 0 15px;
+}
+
+section#detail_p3 div.perspective_vue img {
+	width: 350px;
+	padding: 15px 0;
+	filter: drop-shadow(-15px -10px 30px rgba(0, 0, 0, 0.1));
+}
+
+/* Projet 4 Moi moche et méchant */
+section#bg_p4 {
+	background-image: url(../img/p4/entete_p4.png);
+}
+
+section#detail_p4 div.container_desc-p4 {
+	text-align: right;
+	left: 200px;
+	position: relative;
+}
+
+section#detail_p4 div.container_desc-p4 img {
+	width: 700px;
+}
+
+section#detail_p4 div.perspective_vue {
+	display: flex;
+	flex-direction: column;
+	transform: rotateZ(-40deg);
+	justify-content: center;
+	flex-direction: row-reverse;
+	transform: rotateZ;
+	align-items: center;
+	position: relative;
+	margin-top: 100px;
+}
+
+section#detail_p4 div.perspective_vue>div {
+	display: flex;
+	flex-direction: column;
+	margin: 0 15px;
+}
+
+section#detail_p4 div.perspective_vue img {
+	width: 350px;
+	padding: 15px 0;
+	filter: drop-shadow(-15px -10px 30px rgba(0, 0, 0, 0.1));
+}
+
+/* ------------------------- Page Photographie -------------------- */
+div.container_video {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#myVideo {
+	/* position: fixed; */
+	width: 600px;
+}
+
+/* -------------------------------------------------------------- */
+/* ------------------------- Footer -------------------- */
+/* -------------------------------------------------------------- */
+footer {
+	height: 200px;
+	background-image: url('../img/wave-footer.svg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding: 50px 0;
+}
+
+footer p {
+	margin: 0;
+}
+
+footer div.container_footer {
+	height: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+}
+
+footer div.container_footer ul {
+	display: flex;
+	justify-content: space-between;
+	width: 500px;
+	align-items: flex-end;
+	padding-left: 50px;
+}
+
+footer div.container_footer ul li a.picto_footer {
+	background-repeat: no-repeat;
+	background-size: contain;
+	height: 30px;
+	width: 30px;
+	display: block;
+}
+
+footer div.container_footer ul li a#insta {
+	background-image: url('../img/picto/insta.svg');
+}
+
+footer div.container_footer ul li a#in {
+	background-image: url('../img/picto/in.svg');
+}
+
+footer div.container_footer ul li a#mail {
+	background-image: url('../img/picto/mail.svg');
+	width: 40px;
+}
+
+footer div.container_footer ul li a#unsplash {
+	background-image: url('../img/picto/unsplash.svg');
+}
